@@ -1,0 +1,46 @@
+<ol class="breadcrumb float-right">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item active">Ticket</li>
+</ol>
+<div class="card">
+  <div class="header">
+    <h2 class="title">Ticket List</h2>
+  </div>
+  <div class="content">
+    <form #f="ngForm">
+
+      <a [routerLink]="['../tickets', 'new' ]" class="btn btn-default">New</a>
+    </form>
+  </div>
+</div>
+<div class="card" *ngIf="ticketList.length > 0">
+  <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+  <div class="table-responsive">
+    <table class="table table-centered table-hover mb-0" id="datatable">
+      <thead>
+        <tr>
+          <th class="border-top-0" scope="col">Id</th>
+          <th class="border-top-0" scope="col">Title</th>
+          <th class="border-top-0" scope="col">Email</th>
+          <th class="border-top-0" scope="col">Description</th>
+          <th class="border-top-0" scope="col">priority</th>
+          <th class="border-top-0" scope="col" style="width:120px"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of ticketList" [class.active]="item === selectedTicket">
+
+          <td>{{item.id}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.priority}}</td>
+          <td style="white-space: nowrap">
+            <a [routerLink]="['../tickets', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;
+            <button (click)="delete(item)" class="btn btn-danger">Close</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
