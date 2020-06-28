@@ -4,6 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TicketListComponent } from './ticket-list.component';
 import { TicketService } from '../ticket.service';
+import {MatDialog} from '@angular/material/dialog';
 
 describe('TicketListComponent', () => {
   let component: TicketListComponent;
