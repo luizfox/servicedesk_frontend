@@ -8,22 +8,22 @@
   </div>
   <div class="content">
     <form #f="ngForm">
-
       <a [routerLink]="['../tickets', 'new' ]" class="btn btn-default">New</a>
     </form>
   </div>
 </div>
+
 <div class="card" *ngIf="ticketList.length > 0">
   <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
   <div class="table-responsive">
-    <table class="table table-centered table-hover mb-0" id="datatable">
+    <table matSort (matSortChange)="sortData($event)" class="table table-centered table-hover mb-0" id="datatable">
       <thead>
         <tr>
           <th class="border-top-0" scope="col">Id</th>
           <th class="border-top-0" scope="col">Title</th>
           <th class="border-top-0" scope="col">Email</th>
           <th class="border-top-0" scope="col">Description</th>
-          <th class="border-top-0" scope="col">priority</th>
+          <th mat-sort-header="priority" class="border-top-0" scope="col">Priority</th>
           <th class="border-top-0" scope="col" style="width:120px"></th>
         </tr>
       </thead>

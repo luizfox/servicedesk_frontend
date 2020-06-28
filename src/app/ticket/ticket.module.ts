@@ -6,6 +6,8 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
 import { TicketService } from './ticket.service';
 import { TICKET_ROUTES } from './ticket.routes';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -18,6 +20,9 @@ import { TICKET_ROUTES } from './ticket.routes';
     TicketEditComponent
   ],
   providers: [TicketService],
-  exports: []
+  exports: [
+    MatSortModule,
+    MatTableModule
+  ]
 })
 export class TicketModule { }

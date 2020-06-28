@@ -10,5 +10,9 @@ export const TICKET_ROUTES: Routes = [
   {
     path: 'tickets/:id',
     component: TicketEditComponent
+  },
+  {
+    path: 'ticketsAdd',
+    component: TicketEditComponent
   }
 ];

@@ -14,11 +14,6 @@ export class TicketService {
   constructor(private http: HttpClient) {
   }
 
-  // findById(id: string): Observable<Ticket> {
-  //   const url = `${this.api}/${id}`;
-  //   const params = { id: id };
-  //   return this.http.get<Ticket>(url, {params, headers});
-  // }
   findById(id: string): Observable<Ticket> {
     const url = `${this.api}/get/?id=${id}`;
     return this.http.get<Ticket>(url);

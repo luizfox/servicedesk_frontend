@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TicketModule } from './ticket/ticket.module';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -22,7 +26,14 @@ import { TicketModule } from './ticket/ticket.module';
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-    HomeComponent,
+    HomeComponent
+  ],
+  exports: [
+    MatSortModule,
+    MatTableModule,
+    MatDialogModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

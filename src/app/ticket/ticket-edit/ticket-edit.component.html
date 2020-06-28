@@ -2,8 +2,8 @@
   <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
   <li class="breadcrumb-item active">Ticket</li>
 </ol>
-<!-- <div class="card"> -->
-<div class="modal" tabindex="-1" role="dialog">
+<div class="card">
+<!-- <div class="modal" tabindex="-1" role="dialog"> -->
   <div class="header">
     <h2 class="title">Ticket Detail</h2>
   </div>
@@ -33,7 +33,14 @@
 
       <div class="form-group">
         <label for="priority">priority</label>
-        <input type="number" [(ngModel)]="ticket.priority" id="priority" name="priority" class="form-control">
+        <!-- <input type="number" [(ngModel)]="ticket.priority" id="priority" name="priority" class="form-control"> -->
+        <select id="priority" [(ngModel)]="ticket.priority" name="priority">
+          <option value="1">Very low</option>
+          <option value="2">Low</option>
+          <option value="3">Normal</option>
+          <option value="4">High</option>
+          <option value="5">Very high</option>
+        </select>
       </div>
 
       <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">Save</button>
