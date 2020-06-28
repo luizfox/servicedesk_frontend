@@ -3,7 +3,6 @@ import { TicketFilter } from '../ticket-filter';
 import { TicketService } from '../ticket.service';
 import { Ticket } from '../ticket';
 import {Sort} from '@angular/material/sort';
-//import {MatDialog} from '@angular/material/dialog';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 

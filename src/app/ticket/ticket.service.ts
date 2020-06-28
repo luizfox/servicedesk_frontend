@@ -20,7 +20,7 @@ export class TicketService {
   }
 
   list(): void {
-    this._list().subscribe(result => {
+    this.sendListRequest().subscribe(result => {
         this.ticketList = result;
       },
       err => {
@@ -29,7 +29,7 @@ export class TicketService {
     );
   }
 
-  _list(): Observable<Ticket[]> { //refatorar
+  sendListRequest(): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(this.api + '/list');
   }
 
@@ -41,10 +41,6 @@ export class TicketService {
         console.error('error loading', err);
       }
     );
-  }
-
-  _find(id: TicketFilter): Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(this.api + '/get?id=' + id);
   }
 
   find(id: TicketFilter): Observable<Ticket[]> {
